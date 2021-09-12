@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 export default class VigenereCipheringMachine {
   constructor(type) {
     this.type = type ? type : true;
@@ -17,8 +14,7 @@ export default class VigenereCipheringMachine {
 
     let result = '';
     for (let i = 0, j = 0; i < message.length; i++, j++) {
-      let messK = message.charCodeAt(i);
-      let keyK = key.charCodeAt(i);
+
       if (!(message.charCodeAt(i) > 64 && message.charCodeAt(i) < 91)) {
         result += message[i];
         j--;
@@ -43,8 +39,7 @@ export default class VigenereCipheringMachine {
 
     let result = '';
     for (let i = 0, j = 0; i < message.length; i++, j++) {
-      let messK = message.charCodeAt(i);
-      let keyK = key.charCodeAt(i);
+
       if (!(message.charCodeAt(i) > 64 && message.charCodeAt(i) < 91)) {
         result += message[i];
         j--;
