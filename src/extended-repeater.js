@@ -1,18 +1,19 @@
-/**
- * @prettier
- */
 export default function repeater(str, options) {
   let separator;
   if (!options.repeatTimes) {
-    separator = options.addition;
+    separator = options.addition + '';
     options.repeatTimes = 1;
   } else {
-    options.separator = options.separator ? options.separator + '' : '+';
-    options.additionSeparator = options.additionSeparator ? options.additionSeparator + '' : '|';
+    options.addition = options.addition !== undefined ? options.addition : '';
+    options.separator = options.separator ? options.separator : '+';
+    options.additionSeparator = options.additionSeparator ? options.additionSeparator : '|';
 
+    if (!options.additionRepeatTimes) {
+      options.additionRepeatTimes = 1;
+    }
     separator = [];
     for (let i = 0; i < options.additionRepeatTimes; i++) {
-      separator.push(options.addition);
+      separator.push(options.addition + '');
     }
     separator = separator.join(options.additionSeparator);
   }
